@@ -1,13 +1,14 @@
 "use client";
-import { useTRPC } from "@/trpc/client";
-import { useSuspenseQuery } from "@tanstack/react-query";
+import { Button } from "@/components/ui/button";
+import { authClient } from "@/lib/auth-client";
 
 export function Client() {
-  const trpc = useTRPC();
-  const { data: users } = useSuspenseQuery(trpc.getUsers.queryOptions());
+  const { useSession, signOut } = authClient;
+  const { data: session } = useSession();
   return (
     <div>
-      <pre>{JSON.stringify(users)}</pre>
+      <pre>{JSON.stringify(session)}</pre>
+      {!!session && <Button onClick={() => signOut()}>Log Out</Button>}
     </div>
   );
 }
