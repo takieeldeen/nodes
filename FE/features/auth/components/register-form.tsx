@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -27,6 +26,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
+import { Icon } from "@iconify/react";
 
 const registerSchema = z
   .object({
@@ -104,6 +104,7 @@ export default function RegisterForm() {
                       type="button"
                       disabled={isSubmitting}
                     >
+                      <Icon icon="ri:github-fill" className="h-7! w-7!" />
                       Continue with GitHub
                     </Button>
                     <Button
@@ -112,6 +113,10 @@ export default function RegisterForm() {
                       type="button"
                       disabled={isSubmitting}
                     >
+                      <Icon
+                        icon="material-icon-theme:google"
+                        className="h-7! w-7!"
+                      />
                       Continue with Google
                     </Button>
                     <div className="grid gap-6">

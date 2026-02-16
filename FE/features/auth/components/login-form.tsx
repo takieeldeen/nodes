@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -96,6 +96,7 @@ export default function LoginForm() {
                       type="button"
                       disabled={isSubmitting}
                     >
+                      <Icon icon="ri:github-fill" className="h-7! w-7!" />
                       Continue with GitHub
                     </Button>
                     <Button
@@ -104,6 +105,10 @@ export default function LoginForm() {
                       type="button"
                       disabled={isSubmitting}
                     >
+                      <Icon
+                        icon="material-icon-theme:google"
+                        className="h-7! w-7!"
+                      />
                       Continue with Google
                     </Button>
                     <div className="grid gap-6">
