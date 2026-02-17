@@ -3,11 +3,21 @@ import { Button } from "@/components/ui/button";
 import { useTRPC } from "@/trpc/client";
 import { useMutation } from "@tanstack/react-query";
 import React from "react";
+import { toast } from "sonner";
 
-function TestButtonForAi() {
+function TestButtonForAi({ disabled = false }: { disabled?: boolean }) {
   const trpc = useTRPC();
-  const testAi = useMutation(trpc.testAi.mutationOptions());
-  return <Button onClick={() => testAi.mutate()}>Test The AI</Button>;
+  const { mutate, isPending } = useMutation(trpc.testAi.mutationOptions());
+  return (
+    <Button
+      onClick={() => {
+        mutate();
+      }}
+      disabled={isPending}
+    >
+      Test The AI
+    </Button>
+  );
 }
 
 export default TestButtonForAi;

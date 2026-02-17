@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "inngest": "inngest-cli dev"
+    "inngest": "npx --ignore-scripts=false inngest-cli@latest dev"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.29",
@@ -19,11 +19,8 @@
     "@trpc/client": "^11.10.0",
     "@trpc/server": "^11.10.0",
     "@trpc/tanstack-react-query": "^11.10.0",
-<<<<<<< HEAD
     "ai": "^6.0.86",
-=======
     "axios": "^1.13.5",
->>>>>>> 643268b6a379b55ae5e5135043fa95efe5e0ec62
     "better-auth": "^1.4.18",
     "class-variance-authority": "^0.7.1",
     "client-only": "^0.0.1",

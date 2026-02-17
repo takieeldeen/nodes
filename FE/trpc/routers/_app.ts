@@ -5,12 +5,16 @@ import { generateText } from "ai";
 import { google } from "@ai-sdk/google";
 
 export const appRouter = createTRPCRouter({
+  // testAi: protectedProcedure.mutation(async () => {
+  //   const { text } = await generateText({
+  //     model: google("gemini-2.5-flash"),
+  //     prompt: "Write a vegetarian lasagna recipe for 4 people.",
+  //   });
+  //   return text;
+  // }),
   testAi: protectedProcedure.mutation(async () => {
-    const { text } = await generateText({
-      model: google("gemini-2.5-flash"),
-      prompt: "Write a vegetarian lasagna recipe for 4 people.",
-    });
-    return text;
+    const res = await inngest.send({ name: "execute/ai" });
+    return res;
   }),
   getWorkflows: protectedProcedure.query(async ({ ctx }) => {
     await inngest.send({
