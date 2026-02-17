@@ -40,8 +40,8 @@ export default function LoginForm() {
 
   const defaultValues = useMemo(
     () => ({
-      email: "",
-      password: "",
+      email: "takie.eldeen1998@gmail.com",
+      password: "123456789",
     }),
     [],
   );
