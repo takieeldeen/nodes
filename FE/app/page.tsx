@@ -1,3 +1,4 @@
+import TestButtonForAi from "@/features/ai/test-button";
 import { requireAuth } from "@/lib/auth-utils";
 import { caller } from "@/trpc/server";
 
@@ -7,6 +8,7 @@ export default async function Home() {
   return (
     <main>
       <pre>{JSON.stringify(data, null, 4)}</pre>
+      <TestButtonForAi />
     </main>
   );
 }
