@@ -14,6 +14,11 @@ export const execute = inngest.createFunction(
       model: google("gemini-2.5-flash"),
       system: "You are a Helpful assistant",
       prompt: "What is 2 + 2?",
+      experimental_telemetry: {
+        isEnabled: true,
+        recordInputs: true,
+        recordOutputs: true,
+      },
     });
     await step.sleep("wait-a-moment", "6s");
     return steps;
